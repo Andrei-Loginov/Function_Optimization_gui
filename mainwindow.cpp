@@ -38,12 +38,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->maxIterAfterImproveBox->setMinimum(100);
     ui->maxIterAfterImproveBox->setMaximum(10000);
 
-    ui->maxIterBox->setValue(int(max_iter));
-    ui->maxIterAfterImproveBox->setValue(int(max_iter_after));
+    ui->maxIterBox->setValue(10000);
+    ui->maxIterAfterImproveBox->setValue(1000);
 
     limitsBoxUpdate();
 
-    ui->fun0Box->setValue(1000);
+    //ui->fun0Box->setValue(1000);
     //scene = new QGraphicsScene(*this);
 }
 
@@ -58,7 +58,6 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::on_plotButton_clicked(){
-    ui->fun0Box->setValue(Rosenbrock_2d({1, 1}));
     if (!f) delete f;
     if (ui->rbRosenbrock->isChecked()) {
         f = new Function(2, Rosenbrock_2d);

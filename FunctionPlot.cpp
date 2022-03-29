@@ -85,7 +85,7 @@ void FunctionPlot::mousePressEvent(QMouseEvent *event) {
     p.drawText(QPointF(x_to_idx(res_.trajectory[0][0]), y_to_idx(res_.trajectory[0][1])),
             "(" + QString::number(res_.trajectory[0][0]) + ", " + QString::number(res_.trajectory[0][1]) + ")");
     p.drawText(QPointF(x_to_idx(res_.trajectory[iter - 1][0]), y_to_idx(res_.trajectory[iter - 1][1])),
-        "f(" + QString::number(res_.trajectory[0][0]) + ", " + QString::number(res_.trajectory[0][1]) + ") = " +
+        "f(" + QString::number(res_.trajectory[iter - 1][0]) + ", " + QString::number(res_.trajectory[iter-1][1]) + ") = " +
             QString::number(optim_->eval_func(res_.trajectory[iter - 1])));
 
     p.end();
